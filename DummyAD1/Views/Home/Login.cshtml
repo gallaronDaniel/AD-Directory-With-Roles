@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<h2>Select a User to Log In</h2>
+<form method="post" action="/Home/Login">
+    <label for="user">Choose User:</label>
+    <select name="user" id="user">
+        @foreach (var role in ViewBag.Users.Keys)
+        {
+            <optgroup label="@role">
+                @foreach (var user in ViewBag.Users[role])
+                {
+                    <option value="@user.Name">@user.Name (@user.Email)</option>
+                }
+            </optgroup>
+        }
+    </select>
+    <button type="submit">Login</button>
+</form>

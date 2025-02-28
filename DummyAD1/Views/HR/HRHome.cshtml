@@ -1,0 +1,10 @@
+﻿@using System.Security.Claims
+
+@{
+    ViewData["Title"] = "HR Home";
+}
+
+<h2>HR Home</h2>
+<p>Welcome, HR!</p>
+<p><strong>Role:</strong> @User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value</p>
+<p><strong>Information:</strong> @User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value</p>
