@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@if (!ViewBag.IsAdAuthEnabled)
+{
+    <div style="background-color: yellow; padding: 10px; border: 1px solid black;">
+        <strong>Warning:</strong> Active Directory authentication is currently turned off!
+    </div>
+}
+else
+{
+    <div style="background-color: lightgreen; padding: 10px; border: 1px solid green;">
+        <strong>Active Directory authentication is enabled.</strong>
+    </div>
+}
+
+<div>
+    <p><strong>Username:</strong> @ViewBag.Username</p>
+    <p><strong>Auth Type:</strong> @ViewBag.AuthType</p>
+</div>
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
